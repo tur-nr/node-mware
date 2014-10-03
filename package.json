@@ -1,0 +1,31 @@
+{
+  "name": "mware",
+  "version": "0.0.1",
+  "description": "Module for creating middleware paradigms.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tur-nr/node-mware"
+  },
+  "keywords": [
+    "middleware",
+    "middle-ware",
+    "use",
+    "custom"
+  ],
+  "author": "Christopher Turner <turner296@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tur-nr/node-mware/issues"
+  },
+  "homepage": "https://github.com/tur-nr/node-mware",
+  "dependencies": {
+    "sliced": "0.0.5"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4"
+  }
+}
