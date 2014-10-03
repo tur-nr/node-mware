@@ -2,7 +2,7 @@
 
 mware is a utility for creating middleware paradigms with any node or browser application. Inspired by the middleware pattern in [connect](https://github.com/senchalabs/connect).
 
-[![Build Status](https://travis-ci.org/tur-nr/node-mware?branch=master)](https://travis-ci.org/tur-nr/node-mware)
+[![Build Status](https://travis-ci.org/tur-nr/node-mware.svg?branch=master)](https://travis-ci.org/tur-nr/node-mware)
 
 ### Example
 
@@ -28,24 +28,24 @@ use.run(message, function(err) {
 To install mware in a Node application use npm.
 
 ```bash
-npm install mware
+$ npm install mware
 ```
 
 ### Browser
 
 No tests available for the browser but you may try using it via [webpack](https://github.com/webpack/webpack).
 
-```bash
-webpack index.js mware.js
+```
+$ webpack index.js mware.js
 ```
 
 ## Test
 
 To run tests use the npm.
 
-```bash
-npm install
-npm test
+```
+$ npm install
+$ npm test
 ```
 
 ## Documentation
