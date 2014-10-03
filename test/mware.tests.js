@@ -32,12 +32,12 @@ describe('mware', function() {
         , arg = { foo: 'bar' };
 
       use(function(obj, next) {
-        assert.equal(obj, arg);
+        assert.strictEqual(obj, arg);
         arg.baz = 'qux';
         next();
       });
       use(function(obj, next) {
-        assert.equal(obj, arg);
+        assert.strictEqual(obj, arg);
         assert.equal(obj.baz, 'qux');
         done();
       });
@@ -69,6 +69,20 @@ describe('mware', function() {
         use({});
       }, TypeError);
     });
+
+    it('should have applied context', function(done) {
+      var context = {};
+      var use = mware(context);
+
+      use(function(next) {
+        assert.strictEqual(context, this);
+        next();
+      });
+      use.run(function(err) {
+        assert.strictEqual(context, this);
+        done();
+      });
+    });
   });
 
   describe('#run()', function() {
@@ -82,6 +96,7 @@ describe('mware', function() {
         done();
       });
     });
+
     it('should callback done, with args', function(done) {
       var use = mware();
 

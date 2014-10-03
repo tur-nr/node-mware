@@ -27,7 +27,7 @@ use.run(message, function(err) {
 
 To install mware in a Node application use npm.
 
-```bash
+```
 $ npm install mware
 ```
 

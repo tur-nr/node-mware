@@ -4,7 +4,7 @@ module.exports = function mware(context) {
   if (typeof context !== 'object') {
     context = null;
   }
-  
+
   return (function() {
     var calls = [];
 
@@ -51,7 +51,7 @@ module.exports = function mware(context) {
       function next(err, fin) {
         if (err || fin || !stack.length) {
           stack = null;
-          if (done) { done(err) };
+          if (done) { done.call(context, err) };
           return;
         }
         

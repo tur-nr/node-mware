@@ -1,6 +1,6 @@
 {
   "name": "mware",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Module for creating middleware paradigms.",
   "main": "index.js",
   "scripts": {
