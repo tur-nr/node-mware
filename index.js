@@ -39,7 +39,8 @@ module.exports = function mware(context) {
       }
 
       if (!stack.length) {
-        return done();
+        if (done) { done.call(context); }
+        return;
       }
 
       args.push(next);
@@ -51,7 +52,7 @@ module.exports = function mware(context) {
       function next(err, fin) {
         if (err || fin || !stack.length) {
           stack = null;
-          if (done) { done.call(context, err) };
+          if (done) { done.call(context, err); }
           return;
         }
         

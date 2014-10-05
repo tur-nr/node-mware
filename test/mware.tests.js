@@ -83,6 +83,17 @@ describe('mware', function() {
         done();
       });
     });
+
+    it('should pass a function as arg', function(done) {
+      var use = mware();
+
+      use(function(fn, next) {
+        assert.equal(typeof fn, 'function');
+        fn();
+      });
+
+      use.run(done, null);
+    });
   });
 
   describe('#run()', function() {
