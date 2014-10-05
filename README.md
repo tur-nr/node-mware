@@ -117,7 +117,7 @@ use.run(function(err) {
 ## API
 
 #### mware(*[context]*)
-#### use(*<callback...>*)
+#### use(*\<callback...\>*)
 #### use.run(*[args...]*, *[done]*)
 
 ## License
