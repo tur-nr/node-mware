@@ -1,6 +1,6 @@
 {
   "name": "mware",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Module for creating middleware paradigms.",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/tur-nr/node-mware",
   "dependencies": {
+    "isval": "0.0.2",
     "sliced": "0.0.5"
   },
   "devDependencies": {
