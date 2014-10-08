@@ -1,7 +1,8 @@
-var slice = require('sliced');
+var slice = require('sliced')
+  , isval = require('isval');
 
 module.exports = function mware(context) {
-  if (typeof context !== 'object') {
+  if (!isval(context, 'object')) {
     context = null;
   }
 
@@ -14,12 +15,12 @@ module.exports = function mware(context) {
       while (args.length) {
         var call = args.shift();
 
-        if (Array.isArray(call)) {
+        if (isval(call, 'array')) {
           use.apply(this, call);
           continue;
         }
 
-        if (typeof call !== 'function') {
+        if (!isval(call, 'function')) {
           throw new TypeError();
         }
 
@@ -34,7 +35,7 @@ module.exports = function mware(context) {
         , stack = calls.concat()
         , done;
 
-      if (typeof args[args.length - 1] === 'function') {
+      if (isval(args[args.length - 1], 'function')) {
         done = args.pop();
       }
 
