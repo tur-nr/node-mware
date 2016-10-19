@@ -16,3 +16,6 @@ before_install:
 
 install:
   - yarn install
+
+after_script:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
