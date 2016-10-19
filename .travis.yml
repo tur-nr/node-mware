@@ -4,18 +4,17 @@ os:
 language: node_js
 
 node_js:
-  - "node"
+  - node
 
 cache:
   directories:
-  - node_modules
   - $HOME/.yarn-cache
 
 before_install:
-  - npm install -g yarn
+  - npm install -g --silent yarn
 
 install:
-  - yarn install
+  - yarn
 
 after_script:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
