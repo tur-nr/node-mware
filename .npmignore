@@ -1,4 +1,9 @@
+.nyc_output/
+coverage/
+logs/
 test/
+
 .gitignore
 .travis.yml
 .npmignore
+*.log
