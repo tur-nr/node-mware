@@ -1,7 +1,7 @@
 {
   "name": "mware",
   "version": "1.0.0",
-  "description": "Module for creating middleware paradigms.",
+  "description": "Create middleware stacks.",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "browser": "dist/mware.js",

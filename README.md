@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/tur-nr/node-mware.svg?branch=master)](https://travis-ci.org/tur-nr/node-mware) [![Coverage Status](https://coveralls.io/repos/github/tur-nr/node-mware/badge.svg?branch=master)](https://coveralls.io/github/tur-nr/node-mware?branch=master)
 
-### Example
+### Usage
 
 ```js
 import mware from 'mware';
@@ -13,6 +13,7 @@ const { use, run } = mware();
 // add middleware
 use((ctx, next) => {
     console.assert(ctx === context);
+
     return next();                     // next middleware
     return next(null, true);           // stop the stack
     return next(new Error('oopsies')); // stop and report error
@@ -47,10 +48,10 @@ Returns a `mware` instance.
 
 #### Instance
 
-##### `#use(*&lt;fn...&gt;*)`
+##### `#use(fn...)`
 * `fn: Function|[]Function`, Middleware functions to add to stack.
 
-##### `#run(*[args]*, *[done]*)`
+##### `#run([args], [done])`
 * `args: []*`, List of arguments to pass to each middleware function.
 * `done: Function`, Callback for when the middleware stack has stopped.
 
