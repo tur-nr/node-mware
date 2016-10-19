@@ -7,7 +7,7 @@ export default () => {
             if (Array.isArray(fn)) return use(...fn);
             if ('function' === typeof fn) stack.unshift(fn);
         }
-    }
+    };
     const run = (args, done) => {
         let i = stack.length;
         const next = (err=null, fin) => {
@@ -18,6 +18,6 @@ export default () => {
             stack[--i].apply(null, [...args, next]);
         }
         next();
-    }
+    };
     return { use, run };
 };
