@@ -57,3 +57,18 @@ test('calls done after stack finished', (t) => {
     m.run([], done);
     t.truthy(done.calledWith(null));
 });
+
+test('passes arguments to middleware', (t) => {
+    const m = mware();
+    const fn = sinon.stub().yields();
+    const done = sinon.stub();
+    const object = {};
+    m.use(fn);
+    m.run([object, true, 'foo'], done);
+    t.truthy(fn.calledWithMatch(
+        sinon.match.same(object),
+        sinon.match(true),
+        sinon.match('foo'),
+        sinon.match.func
+    ));
+});
