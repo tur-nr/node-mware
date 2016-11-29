@@ -1,8 +1,8 @@
 # mware
 
-`mware` is a utility for creating a middleware stack with any node or browser application. Inspired by the middleware pattern in [connect](https://github.com/senchalabs/connect).
-
 [![Build Status](https://travis-ci.org/tur-nr/node-mware.svg?branch=master)](https://travis-ci.org/tur-nr/node-mware) [![Coverage Status](https://coveralls.io/repos/github/tur-nr/node-mware/badge.svg?branch=master)](https://coveralls.io/github/tur-nr/node-mware?branch=master)
+
+`mware` is a utility for creating a middleware stack with any node or browser application. Inspired by the middleware pattern in [connect](https://github.com/senchalabs/connect).
 
 ### Usage
 
@@ -54,6 +54,10 @@ Returns a `mware` instance.
 ##### `#run([args], [done])`
 * `args: []*`, List of arguments to pass to each middleware function.
 * `done: Function`, Callback for when the middleware stack has stopped.
+
+## Async/await
+
+For an async/await approach see [`mware-async`](https://github.com/9technology/mware-async).
 
 ## License
 
